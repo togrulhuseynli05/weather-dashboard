@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-btn" aria-label="Menu">
+            <img src="images/grid-outline.svg" alt="" />
+          </button>
+          <button class="icon-btn" aria-label="Notifications">
+            <img src="images/bell-outline.svg" alt="" />
+          </button>
+          <div class="location">
+            <img src="images/pin-outline.svg" alt="" /><span id="location"
+              >Loading...</span
+            >
+          </div>
+        </div>
+
+        <form class="search" id="search-form">
+          <button type="submit" aria-label="Search">
+            <img
+              src="images/minimize-outline.svg"
+              width="16"
+              height="16"
+              alt=""
+            />
+          </button>
+          <input
+            id="city-input"
+            type="text"
+            placeholder="Search City"
+            aria-label="Search City"
+          />
+        </form>
+
+        <div class="topbar-right">
+          <button class="switch on" id="theme-toggle" aria-label="Dark mode">
+            <span class="circle"
+              ><img src="images/moon-outline.svg" alt=""
+            /></span>
+          </button>
+          <div class="avatar">HT</div>
+        </div>
+      </header>
+
+      <p id="status" class="status"></p>
+
+      <div class="dashboard">
+        <main>
+          <div class="tabs-row">
+            <div class="tabbar text">
+              <button>Today</button>
+              <button>Tomorrow</button>
+              <button class="active">Next 7 days</button>
+            </div>
+            <div class="tabbar pill">
+              <button class="active">Forecast</button>
+              <button>Air Quality</button>
+            </div>
+          </div>
+
+          <div class="today-row">
+            <article class="today-card">
+              <header class="today-head">
+                <span id="today-day">--</span>
+                <span id="today-time">--</span>
+              </header>
+              <div class="today-body">
+                <div class="today-top">
+                  <div>
+                    <span class="today-temp" id="today-temp">--</span>
+                    <p class="desc" id="today-desc"></p>
+                  </div>
+                  <img class="today-icon" id="today-icon" alt="" />
+                </div>
+                <div class="today-details">
+                  <ul>
+                    <li>Real Feel <strong id="today-feel"></strong></li>
+                    <li>Wind <strong id="today-wind"></strong></li>
+                    <li>Pressure <strong id="today-pressure"></strong></li>
+                    <li>Humidity <strong id="today-humidity"></strong></li>
+                  </ul>
+                  <ul>
+                    <li>Sunrise <strong id="today-sunrise"></strong></li>
+                    <li>Sunset <strong id="today-sunset"></strong></li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <div class="week-grid" id="week-grid"></div>
+          </div>
+
+          <h2 class="section-title">Today's Overview</h2>
+
+          <div class="overview-grid">
+            <section class="widget overview-card">
+              <h3 class="widget-title">Wind Status</h3>
+              <img
+                class="wind-status"
+                src="images/Wind_Satus_Rectangle.svg"
+                alt=""
+              />
+              <div class="widget-footer">
+                <span><strong id="wind-speed">--</strong> km/h</span>
+                <span class="muted" id="wind-time"></span>
+              </div>
+            </section>
+
+            <section class="widget overview-card">
+              <h3 class="widget-title">UV Index</h3>
+              <img class="uv-icon" src="images/UV_index_Circle.svg" alt="" />
+              <p class="uv-value">N/A <span>UV</span></p>
+            </section>
+
+            <section
+              class="map-banner"
+              style="background-image: url(images/Images.svg)"
+            >
+              <div class="map-title">
+                Explore global map of wind weather and ocean condition
+              </div>
+              <button class="map-btn">GET STARTED</button>
+            </section>
+
+            <section class="widget overview-card">
+              <h3 class="widget-title">Humidity</h3>
+              <div class="big-icon">
+                <img src="images/carbon_humidity-alt.svg" alt="" />
+              </div>
+              <div class="widget-footer">
+                <span class="big-value" id="humidity-value">--</span>
+                <p class="note" id="dew-point"></p>
+              </div>
+            </section>
+
+            <section class="widget overview-card">
+              <h3 class="widget-title">Visibility</h3>
+              <div class="big-icon">
+                <img src="images/Windy_1.svg" alt="" />
+              </div>
+              <div class="widget-footer">
+                <span class="big-value"
+                  ><span id="visibility-value">--</span> <small>km</small></span
+                >
+                <p class="note" id="visibility-text"></p>
+              </div>
+            </section>
+          </div>
+        </main>
+
+        <aside class="side">
+          <section>
+            <h3 class="heading">Chance of Rain</h3>
+            <div class="rain-chart"><canvas id="rain-chart"></canvas></div>
+          </section>
+
+          <section>
+            <div class="cities-head">
+              <h3 class="heading">Other Cities</h3>
+              <button class="see-all">See All</button>
+            </div>
+            <ul class="city-list" id="city-list"></ul>
+          </section>
+        </aside>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/rainChart.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
