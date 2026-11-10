@@ -2,7 +2,7 @@
 
 Bakı və dünyanın digər şəhərləri üçün cari havanı, 7 günlük proqnozu və yağış ehtimalını göstərən veb tətbiq. Məlumat OpenWeatherMap və Open-Meteo API-lərindən çəkilir. Tətbiq HTML, CSS və JavaScript ilə yazılıb və build addımı tələb etmir.
 
-**Canlı demo:** http://127.0.0.1:5501/index.html (Live Server ilə işə salınanda açılır)
+
 
 ## Ekran görüntüləri
 
