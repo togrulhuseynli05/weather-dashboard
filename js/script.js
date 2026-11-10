@@ -1,5 +1,3 @@
-// Səhifənin əsas hissəsi: məlumatı çəkir və ekrana yazır
-
 const DEFAULT_CITY = "Baku";
 const OTHER_CITIES = [
   "Beijing,CN",
@@ -28,7 +26,7 @@ function setStatus(text, isError = false) {
 }
 
 async function searchCity(city) {
-  setStatus("Loading weather...");
+  setStatus(MESSAGES.loading);
   try {
     const current = await getCurrentWeather(city);
     const forecast = await getForecast(city);
